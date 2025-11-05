@@ -1,0 +1,27 @@
+{
+    "id": "992F6568",
+    "path": "/cloud/project/scripts/spectral_clustering.R",
+    "project_path": "scripts/spectral_clustering.R",
+    "type": "r_source",
+    "hash": "2877237053",
+    "contents": "",
+    "dirty": false,
+    "created": 1761591016016.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "28,35",
+        "scrollLine": "16"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1762308183,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1762308183398,
+    "read_only": false,
+    "read_only_alternatives": []
+}

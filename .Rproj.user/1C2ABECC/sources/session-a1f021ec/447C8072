@@ -1,0 +1,26 @@
+{
+    "id": "447C8072",
+    "path": "/cloud/project/scripts/run_spectral_simulation.R",
+    "project_path": "scripts/run_spectral_simulation.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1761590933798.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "19,68",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1762305006,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1762305006051,
+    "read_only": false,
+    "read_only_alternatives": []
+}

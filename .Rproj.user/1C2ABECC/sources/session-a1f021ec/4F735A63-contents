@@ -1,0 +1,20 @@
+library(cluster)
+source("scripts/generate_shell_clusters.R")
+source("scripts/spectral_clustering.R")
+
+run_spectral_simulation <- function() {
+  results <- data.frame()
+  for (radius in seq(10, 0, by = -1)) {
+    set.seed(123)
+    dat <- generate_shell_clusters(n_shells = 4, k_per_shell = 100, max_radius = radius)
+    gap <- clusGap(dat$data,
+                   FUN = function(x, k) spectral_clustering(x, k, d_threshold = 1),
+                   K.max = 6, B = 20)
+    best_k <- which.max(gap$Tab[, "gap"])
+    results <- rbind(results, data.frame(max_radius = radius, estimated_k = best_k))
+  }
+  write.csv(results, "results/data/spectral_gap_results.csv", row.names = FALSE)
+  cat("✅ Spectral clustering simulation complete — results saved!\n")
+}
+
+run_spectral_simulation()

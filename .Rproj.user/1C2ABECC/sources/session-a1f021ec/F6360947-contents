@@ -1,0 +1,9 @@
+generate_hypercube_clusters <- function(n, k, side_length, noise_sd = 1.0) {
+  centers <- diag(rep(side_length, n))
+  data_list <- lapply(1:n, function(i) {
+    matrix(rnorm(k * n, mean = 0, sd = noise_sd), ncol = n) + centers[i, ]
+  })
+  data <- do.call(rbind, data_list)
+  labels <- rep(1:n, each = k)
+  return(list(data = data, labels = labels))
+}

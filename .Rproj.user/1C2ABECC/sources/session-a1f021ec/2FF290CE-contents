@@ -1,0 +1,20 @@
+library(cluster)
+library(dplyr)
+
+source("scripts/generate_data.R")
+
+simulate_gap <- function() {
+  results <- data.frame()
+  for (n in c(6, 5, 4, 3, 2)) {
+    for (L in seq(10, 1, by = -1)) {
+      set.seed(123)
+      dat <- generate_hypercube_clusters(n, k = 100, side_length = L)
+      gap <- clusGap(dat$data, FUN = kmeans, nstart = 20, iter.max = 50, K.max = n + 2, B = 50)
+      best_k <- which.max(gap$Tab[, "gap"])
+      results <- rbind(results, data.frame(dimension = n, side_length = L, estimated_k = best_k))
+    }
+  }
+  write.csv(results, "results/data/gap_results.csv", row.names = FALSE)
+}
+
+simulate_gap()
